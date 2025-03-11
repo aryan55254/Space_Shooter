@@ -8,4 +8,4 @@ router.get("/profile", protectroute, (req, res) => {
     userid: req.user, //id extracted from the decoded jwt
   });
 });
-module.exports = { router };
+module.exports = router;

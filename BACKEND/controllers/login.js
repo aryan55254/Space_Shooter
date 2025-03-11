@@ -4,7 +4,7 @@ const generatetoken = require("../utility/jwt");
 const USER = require("../models/user");
 const jwt = require("jsonwebtoken");
 
-const loginsuer = async (req, res) => {
+const loginuser = async (req, res) => {
   try {
     //extract user email and password from req body
     const { useremail, userpassword } = req.body;
@@ -27,4 +27,4 @@ const loginsuer = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
-module.exports = { loginsuer };
+module.exports = loginuser;
