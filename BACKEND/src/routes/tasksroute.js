@@ -5,11 +5,11 @@ const deletetask = require("../controllers/deletetask");
 const updatetask = require("../controllers/updatetask");
 const updatestatus = require("../controllers/updatestatus");
 //route to add the tasks
-router.post("/addtask");
+router.post("/addtask",addtask);
 //route to delete the tasks
-router.delete("/deletetask/:id");
+router.delete("/deletetask/:id",deletetask);
 //route to update the tasks
-router.patch("/updatetask/:id");
+router.patch("/updatetask/:id",updatetask);
 //route to change the task status
-router.patch("/changestatus/:id");
+router.patch("/changestatus/:id",updatestatus);
 module.exports = router;
