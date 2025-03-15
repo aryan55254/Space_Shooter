@@ -11,6 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 //connect to db
 connectdb();
 //routes
-app.use("/tasks",taskroutes);
+app.use("/tasks", taskroutes);
 //server
 app.listen(4000, () => console.log("server is running on the port 4000"));
