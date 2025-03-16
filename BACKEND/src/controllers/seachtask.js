@@ -3,9 +3,12 @@ const tasks = require("../models/tasks");
 const searchtask = async (req, res) => {
   try {
     const { query } = req.params;
-    const matchedtasks = await tasks.find({
-      Task: { $regex: query, $options: "i" },
-    });
+    const matchedtasks = await tasks.find(
+      {
+        Task: { $regex: query, $options: "i" },
+      },
+      "Task Completed"
+    );
     return res.status(200).json({ matchedtasks });
   } catch (error) {
     return res

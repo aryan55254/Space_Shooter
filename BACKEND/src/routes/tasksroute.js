@@ -10,6 +10,7 @@ const gettaskbyid = require("../controllers/taskbyid");
 const deletetaskbystatus = require("../controllers/deletebystatus");
 const sorttask = require("../controllers/getsortedtasks");
 const searchtasks = require("../controllers/seachtask");
+const taskdescription = require("../controllers/getfulltask");
 //route to add the tasks
 router.post("/addtask", addtask);
 //route to delete the tasks
@@ -30,4 +31,6 @@ router.delete("/deletecompleted", deletetaskbystatus);
 router.get("/sort/:order", sorttask);
 //route to get task by search
 router.get("/search/:query", searchtasks);
+//route to get full task description
+router.get("/full/:id", taskdescription);
 module.exports = router;

@@ -5,7 +5,7 @@ const gettaskbystatus = async (req, res) => {
     const { status } = req.params;
     const isCompleted = status === "true";
 
-    const taskbystatus = await tasks.find({ completed: isCompleted });
+    const taskbystatus = await tasks.find({ completed: isCompleted },"Task completed");
 
     return res.status(200).json(taskbystatus);
   } catch (error) {

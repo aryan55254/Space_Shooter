@@ -5,7 +5,9 @@ const updatetaskstatus = async (req, res) => {
     const { id } = req.params;
     const { status } = req.params;
     const iscompleted = status === "true";
-
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid Task ID" });
+    }
     const task = await tasks.findByIdAndUpdate(
       id,
       { completed: iscompleted },

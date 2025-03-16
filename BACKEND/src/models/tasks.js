@@ -1,5 +1,10 @@
-//taks
+//tasks
 const mongoose = require("mongoose");
+const subtaskSchema = new mongoose.Schema({
+  title: {
+    type: String,
+  },
+});
 
 const tasksschema = new mongoose.Schema(
   {
@@ -11,6 +16,12 @@ const tasksschema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    dueDate: { type: Date },
+    priority: { type: String },
+    description: {
+      type: String,
+    },
+    subtasks: [subtaskSchema],
   },
   {
     timestamps: true,
