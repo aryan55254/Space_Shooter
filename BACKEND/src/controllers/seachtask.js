@@ -7,7 +7,7 @@ const searchtask = async (req, res) => {
       {
         Task: { $regex: query, $options: "i" },
       },
-      "Task Completed"
+      "Task completed"
     );
     return res.status(200).json({ matchedtasks });
   } catch (error) {

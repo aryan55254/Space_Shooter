@@ -1,6 +1,6 @@
 //update task logic
+const { default: mongoose } = require("mongoose");
 const tasks = require("../models/tasks");
-
 const updatetask = async (req, res) => {
   try {
     const { id } = req.params;
@@ -16,7 +16,8 @@ const updatetask = async (req, res) => {
     const updatedtasks = await tasks.findByIdAndUpdate(
       id,
       { Task: updatedtask },
-      { new: true }
+      { new: true },
+      "Task completed"
     );
     if (!updatedtasks) {
       return res.status(404).json({ message: "task not found" });

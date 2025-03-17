@@ -11,6 +11,8 @@ const deletetaskbystatus = require("../controllers/deletebystatus");
 const sorttask = require("../controllers/getsortedtasks");
 const searchtasks = require("../controllers/seachtask");
 const taskdescription = require("../controllers/getfulltask");
+//route to get tasks by id
+router.get("/gettask/:id", gettaskbyid);
 //route to add the tasks
 router.post("/addtask", addtask);
 //route to delete the tasks
@@ -18,15 +20,13 @@ router.delete("/deletetask/:id", deletetask);
 //route to update the tasks
 router.patch("/updatetask/:id", updatetask);
 //route to change the task status
-router.patch("/changestatus/:id", updatestatus);
+router.patch("/changestatus/:id/:status", updatestatus);
 //route to get all tasks
 router.get("/gettasks", gettasks);
 //route to get task by status
-router.get("/status/:completed", gettaskbystatus);
-//route to get tasks by id
-router.get("/:id", gettaskbyid);
+router.get("/status/:status", gettaskbystatus);
 //route to delete all completed tasks
-router.delete("/deletecompleted", deletetaskbystatus);
+router.delete("/deletebystatus/:status", deletetaskbystatus);
 //route to get task in sorted by date
 router.get("/sort/:order", sorttask);
 //route to get task by search

@@ -1,6 +1,6 @@
 //delete task logic
 const tasks = require("../models/tasks");
-
+const mongoose = require("mongoose");
 const deletetask = async (req, res) => {
   try {
     const { id } = req.params;
@@ -13,6 +13,7 @@ const deletetask = async (req, res) => {
     }
     return res.status(200).json({ message: "task deleted" });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ message: "error happened", error });
   }
 };
