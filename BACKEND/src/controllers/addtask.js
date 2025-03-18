@@ -3,11 +3,18 @@ const tasks = require("../models/tasks");
 
 const addtask = async (req, res) => {
   try {
-    const { Task } = req.body;
+    const { Task, dueDate, priority, description, subtasks } = req.body;
+
     if (!Task) {
-      return res.status(400).json({ message: "Task is empty" });
+      return res.status(400).json({ message: "Taskdetails are empty" });
     }
-    const newtask = new tasks({ Task });
+    const newtask = new tasks({
+      Task,
+      dueDate,
+      priority,
+      description,
+      subtasks: Array.isArray(subtasks) ? subtasks : [],
+    });
     await newtask.save();
 
     return res.status(201).json({ message: "Task added", task: newtask });
