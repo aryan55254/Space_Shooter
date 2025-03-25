@@ -14,7 +14,5 @@ connectdb();
 //routes
 //taskroutes
 app.use("/api/tasks", taskroutes);
-//authroutes
-app.use("/api/auth", authroutes);
 //server
 app.listen(4000, () => console.log("server is running on the port 4000"));
