@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 const authmiddleware = async (req, res) => {
-  const token = req.header("Authorization");
+  const token = req.cookies.auth_token;;
   if (!token)
-    return res.status(401).json({ message: "no token access denied" });
+    return res.status(401).json({ message: "no token , access denied" });
   try {
     const decoded = jwt.verify(token.split(" ")[1], process.env.JWT_SECRET);
     req.user = decoded;
