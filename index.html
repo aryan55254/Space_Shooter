@@ -4,13 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Space Shooter</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <h1>Space Shooter</h1>
-  <canvas id="gameCanvas" width="480" height="640"></canvas>
+  <div class="game-container">
+    <canvas id="gameCanvas"></canvas>
+    <div class="score-container" id="scoreDisplay"></div>
+  </div>
   <button id="restartBtn">Play Again</button>
+  <div class="mobile-controls">
+    <button id="leftBtn">←</button>
+    <button id="shootBtn">🔥</button>
+    <button id="rightBtn">→</button>
+  </div>
+  <div class="game-info">
+    <p>Use ← → arrows or buttons to move. Space or 🔥 to shoot.</p>
+    <p>Green = Speed | Yellow = Rapid fire</p>
+  </div>
 
-  <script src="./game.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>

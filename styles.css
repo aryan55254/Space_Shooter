@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: radial-gradient(circle at top, #0f0f1a 0%, #000 100%);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+}
+h1 {
+  margin: 10px 0 20px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  font-size: 2rem;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #ffffff22;
+  box-shadow: 0 0 15px #0ff;
+  background-color: #000;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  max-height: 80vh;
+  touch-action: none;
+}
+#restartBtn {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: linear-gradient(to bottom, #0ff, #088);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 0 15px #0ff;
+  transition: all 0.2s;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+#restartBtn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 0 20px #0ff;
+}
+.score-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0 0 5px #0ff;
+  z-index: 10;
+  font-family: monospace;
+}
+.mobile-controls {
+  display: none;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 15px;
+}
+.mobile-controls button {
+  width: 70px;
+  height: 70px;
+  background: rgba(0, 255, 255, 0.2);
+  border: 2px solid #0ff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  margin: 0 20px;
+  box-shadow: 0 0 10px #0ff;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.mobile-controls button:active {
+  background: rgba(0, 255, 255, 0.5);
+}
+.game-info {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #0ff;
+  max-width: 500px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .mobile-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  canvas {
+    max-height: 50vh;
+  }
+  .game-info {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding: 8px 10px;
+    margin-top: 5px;
+    width: 95%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  body {
+    padding: 5px;
+  }
+}
